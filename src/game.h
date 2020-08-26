@@ -6,6 +6,8 @@
 #include "controller.h"
 #include "renderer.h"
 #include "snake.h"
+#include "snakePlanner.h"
+
 
 class Game {
  public:
@@ -14,9 +16,13 @@ class Game {
            std::size_t target_frame_duration);
   int GetScore() const;
   int GetSize() const;
+  Snake* getSnake() {return &snake;}
+  SDL_Point* getFood() {return &food;}
+
 
  private:
-  Snake snake;
+  // Snake snake;
+  SnakePlanner snake;
   SDL_Point food;
 
   std::random_device dev;

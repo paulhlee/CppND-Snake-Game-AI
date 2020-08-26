@@ -43,6 +43,9 @@ void Snake::UpdateHead() {
   head_y = fmod(head_y + grid_height, grid_height);
 }
 
+
+
+
 void Snake::UpdateBody(SDL_Point &current_head_cell, SDL_Point &prev_head_cell) {
   // Add previous head location to vector
   body.push_back(prev_head_cell);
@@ -72,6 +75,7 @@ bool Snake::SnakeCell(int x, int y) {
   }
   for (auto const &item : body) {
     if (x == item.x && y == item.y) {
+      // std::cout<<"HEY"<<std::endl;
       return true;
     }
   }

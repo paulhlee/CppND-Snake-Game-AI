@@ -39,3 +39,31 @@ void Controller::HandleInput(bool &running, Snake &snake) const {
     }
   }
 }
+
+void Controller::HandleAI(bool &running, Snake &snake, Snake::Direction direct) const {
+  switch(direct){
+    case Snake::Direction::kUp:
+          ChangeDirection(snake, Snake::Direction::kUp,
+                          Snake::Direction::kDown);
+          break;
+
+    case Snake::Direction::kDown:
+          ChangeDirection(snake, Snake::Direction::kDown,
+                          Snake::Direction::kUp);
+          break;
+
+    case Snake::Direction::kLeft:
+          ChangeDirection(snake, Snake::Direction::kLeft,
+                          Snake::Direction::kRight);
+          break;
+
+    case Snake::Direction::kRight:
+          ChangeDirection(snake, Snake::Direction::kRight,
+                          Snake::Direction::kLeft);
+          break;
+
+  }}
+
+
+
+

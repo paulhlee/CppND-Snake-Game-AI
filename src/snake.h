@@ -28,6 +28,9 @@ class Snake {
   float head_y;
   std::vector<SDL_Point> body;
 
+  int get_grid_width(){return grid_width;}
+  int get_grid_height(){return grid_height;}
+
  private:
   void UpdateHead();
   void UpdateBody(SDL_Point &current_cell, SDL_Point &prev_cell);

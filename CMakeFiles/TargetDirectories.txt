@@ -1,0 +1,3 @@
+/home/workspace/CppND-Snake-Game-AI/CMakeFiles/rebuild_cache.dir
+/home/workspace/CppND-Snake-Game-AI/CMakeFiles/SnakeGame.dir
+/home/workspace/CppND-Snake-Game-AI/CMakeFiles/edit_cache.dir

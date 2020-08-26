@@ -2,6 +2,7 @@
 #include <iostream>
 #include "SDL.h"
 
+
 Game::Game(std::size_t grid_width, std::size_t grid_height)
     : snake(grid_width, grid_height),
       engine(dev()),
@@ -24,6 +25,24 @@ void Game::Run(Controller const &controller, Renderer &renderer,
 
     // Input, Update, Render - the main game loop.
     controller.HandleInput(running, snake);
+    // generate direction
+    std::vector<Nodes> directs = snake.findNeighbors(food);
+    Snake::Direction way = snake.BFS(directs);
+    //  switch(way){
+    // case Snake::Direction::kUp:
+    //       std::cout<<"UP"+ std::to_string(food.x)+ std::to_string(snake.head_x)<<std::endl;
+    //       break;
+    // case Snake::Direction::kDown:
+    //       std::cout<<"Down" + std::to_string(food.x)+ std::to_string(snake.head_x)<<std::endl;
+    //       break;
+    // case Snake::Direction::kLeft:
+    //       std::cout<<"LEFT" + std::to_string(food.x)+ std::to_string(snake.head_x)<<std::endl;
+    //       break;
+    // case Snake::Direction::kRight:
+    //       std::cout<<"RIGHT"+ std::to_string(food.x)+ std::to_string(snake.head_x)<<std::endl;
+    //       break;}
+    controller.HandleAI(running,snake, way);
+
     Update();
     renderer.Render(snake, food);
 
@@ -79,7 +98,7 @@ void Game::Update() {
     PlaceFood();
     // Grow snake and increase speed.
     snake.GrowBody();
-    snake.speed += 0.02;
+    snake.speed += 0.005;
   }
 }
 
