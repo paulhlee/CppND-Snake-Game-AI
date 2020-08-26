@@ -1,6 +1,8 @@
 # CPPND: Capstone Snake Game Example
 
+This is the Udacity Capstone project. My project implements a simple AI module using Best First Search algorithm. The snake can score on average at least 15 points in a game. This simple implementatono encompaasses creating an AI class that inherits from the base game class. The AI class then have to be sucessfully integrated with the main game class. 
 This is a starter repo for the Capstone project in the [Udacity C++ Nanodegree Program](https://www.udacity.com/course/c-plus-plus-nanodegree--nd213). The code for this repo was inspired by [this](https://codereview.stackexchange.com/questions/212296/snake-game-in-c-with-sdl) excellent StackOverflow post and set of responses.
+
 
 <img src="snake_game.gif"/>
 
