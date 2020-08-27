@@ -37,9 +37,10 @@ Nodes SnakePlanner::Scenarios(Snake::Direction direction, float x, float y,SDL_P
   float currScore = distancePoints(x, y,(float)(food.x), (float)(food.y));
   int new_x = static_cast<int>(x);
   int new_y = static_cast<int>(y);
-
+  std::cout<<std::to_string(new_y)+" "+std::to_string(food.y)<<std::endl;
   if (food.x == new_x && food.y == new_y){
     currScore = -currScore;
+    std::cout<<"HEY"<<std::endl;
   }
  
   Nodes curNode(x,y,currScore, direction);
